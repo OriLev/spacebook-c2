@@ -15,11 +15,13 @@ var newPost = function (textEntry) {
 var updatePosts = function() {
 	$('.posts').empty();
 	for(var i=0; i<posts.length; i++) {
+		// var _commentP = $('<p></p>');
+		// _commentP.addClass("post");
 		var _commentP = $('<p class="post" data-id="' + posts[i].id + '"></p>"');
 		var _removeOpt = $('<a href="#" class="remove">Remove</a>');
 		var _postText = " " + posts[i].text;
-		var _post = _commentP.append(_removeOpt);
-		var _post = _commentP.append(_postText);
+		var _post = _commentP.append(_removeOpt).append(_postText);
+		// _post = _commentP.append(_postText);
 		$('.posts').append(_post);
 	}
 	$('.remove').click(removePost);
